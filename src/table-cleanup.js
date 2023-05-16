@@ -15,67 +15,175 @@ let tagsDefault =
 p
 `
 
-let inputDefault2 =
+let inputDefault =
 `
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tr>
-        <td width="46%" valign="top"><p>Header A1 <strong></strong><sup>4</sup></p></td>
-        <td width="23%" valign="top"><p align="center"><strong>Header    A2 </strong></p></td>
-        <td width="30%" valign="top"><strong><p align="center">Header    A3 </p></strong></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p><em>Row    Header A1<sup>2</sup></em></p></td>
-        <td width="23%" valign="top"><p align="center"><em>111</em></p></td>
-        <td width="30%" valign="top"><p align="center"><em>111</em></p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><div class="mrgn-lft-md text-left fnt-nrml"><p>Row    Header A2<sup>1</sup></p></div></td>
-        <td width="23%" valign="top"><p align="center">222</p></td>
-        <td width="30%" valign="top"><p align="center">222</p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row Header A3<sup>3</sup></p></td>
-        <td width="23%" valign="top"><p align="center">333</p></td>
-        <td width="30%" valign="top"><p align="center">333</p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row    Header A4<sup>2</sup></p></td>
-        <td width="23%" valign="top"><p align="center">444 </p></td>
-        <td width="30%" valign="top"><p align="center">444</p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row Header A5</p></td>
-        <td width="23%" valign="top"><p align="center">555</p></td>
-        <td width="30%" valign="top"><p align="center">555<strong></strong></p></td>
-    </tr>
-    <tr>
-        <td width="100%" colspan="3" valign="top"><p>Header B<sup>1</sup></p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row    Header B1<sup>2</sup></p></td>
-        <td width="23%" valign="top"><p align="center">666</p></td>
-        <td width="30%" valign="top"><p align="center">666</p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row    Header B2</p></td>
-        <td width="23%" valign="top"><p align="center">777</p></td>
-        <td width="30%" valign="top"><p align="center">777</p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row    Header B3</p></td>
-        <td width="23%" valign="top"><p align="center">888</p></td>
-        <td width="30%" valign="top"><p align="center">888</p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Header C</p></td>
-        <td width="23%" valign="top"><p><strong>&nbsp;</strong></p></td>
-        <td width="30%" valign="top"><p><strong>&nbsp;</strong></p></td>
-    </tr>
-    <tr>
-        <td width="46%" valign="top"><p>Row    Header C1</p></td>
-        <td width="23%" valign="top"><p align="center">999</p></td>
-        <td width="30%" valign="top"><p align="center">999</p></td>
-    </tr>
+<table border="0" cellspacing="0" cellpadding="0" width="99%">
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>2018– <br>
+      2019&nbsp;&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>2019–<br>
+      2020&nbsp;&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>2020–<br>
+      2021&nbsp;&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>2021–<br>
+      2022&nbsp;&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>2022–<br>
+      2023&nbsp;&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>2023–<br>
+      2024&nbsp;&nbsp;</p></td>
+    <td width="71" valign="bottom"><p>Total</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Section Heading </p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>0 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>9 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>50 </strong></p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Row Heading </p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Row Heading</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;Sub heading level 1</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;Sub heading level 1</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Section Heading</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>0 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>9 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>10 </strong></p></td>
+    <td width="71" nowrap valign="bottom"><p align="right"><strong>50 </strong></p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Row Heading </p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;Sub heading level 1</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;Sub heading level 1</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;&nbsp;&nbsp;Sub heading level 2</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;&nbsp;&nbsp;Sub heading level 2</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sub heading level 3</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sub heading level 3</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Row Heading</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
+  <tr>
+    <td width="208" valign="bottom"><p>Row Heading</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">0</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">9</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">10</p></td>
+    <td width="71" nowrap valign="bottom"><p align="right">50</p></td>
+  </tr>
 </table>
 `
 
