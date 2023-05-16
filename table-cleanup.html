@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Cleanup</title>
+    <meta name="description" content="Tool to align HTML tables to WET Style standards">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jordan Chou">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/wet-boew.min.css">
+    <link rel="stylesheet" href="css/theme.min.css">
+    <link rel="stylesheet" href="css/table-cleanup.css">
+
+    <style>
+        td {
+            border: 3px solid #303030;
+        }
+    </style>
+
+    <script src='libs/jquery-3.6.0.slim.min.js'></script>
+    <script type='text/javascript' src='src/table-cleanup.js'></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Table Cleanup <span class="small">v2023.05.11</span></h1>
+        <div class="well">
+            <fieldset>
+                <legend>Table Caption</legend>
+                    <div class="row form-group">
+                        <label class="col-xs-2 control-label text-right" for="tableNum">Table Number</label>
+                        <div class="col-xs-10 mrgn-bttm-sm">
+                            <input class="form-control" id="tableNum" type="text" placeholder="Ex. Table 2.2">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-xs-2 control-label text-right" for="tableTitle">Table Title</label>
+                        <div class="col-xs-10 mrgn-bttm-sm">
+                            <input class="form-control" id="tableTitle" type="text" placeholder="Ex. Economic Report">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-xs-2 control-label text-right" for="tableUnit">Table Unit</label>
+                        <div class="col-xs-10 mrgn-bttm-sm">
+                            <input class="form-control" id="tableUnit" type="text" placeholder="Ex. millions of dollars">
+                        </div>
+                    </div>
+            </fieldset>
+            <fieldset>
+                <legend>Input</legend>
+                <div class="row">
+                    <div class="col-md-12 mrgn-bttm-md">
+                        <label for='inputTextarea'>Add table markup below including the <code>&lt;table&gt;&lt;/table&gt;</code> element</label>
+                        <textarea class="form-control mrgn-bttm-sm" style="width: 100%;" rows="16" name ='inputTextarea' id='inputText' title="Paste the table HTML markup"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Settings</legend>
+                <div class="row mrgn-bttm-md">
+                    <div class="col-md-4">
+                        <label for="attrTextarea">Remove Attributes</label>
+                        <textarea class="form-control mrgn-bttm-sm" style="width: 100%;" rows="8" name ='attrTextarea' id='attrList' title="Enter attributes to remove from the table"></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="tagTextarea">Remove Tags</label>
+                        <textarea class="form-control mrgn-bttm-sm" style="width: 100%;" rows="8" name ='tagTextarea' id='tagList' title="Enter the tags to be removed from the table"></textarea>
+                    </div>
+                    <div class="row mrgn-bttm-md">
+                        <div class="col-md-4">
+                            <label for="">Options</label>
+                            <div class="checkbox">
+                                <span class="mrgn-rght-md wb-inv">
+                                    <label for="format"><input id="format" type="checkbox" checked disabled>Format table</label>
+                                </span>
+                                    <label for="scope" title="Adds scope attributes to headings"><input id="scope" type="checkbox" checked>Scope table</label><br>
+                                    <label for="finTable" title="Aligns all cells to the right except for row headings"><input id="finTable" type="checkbox" checked>Financial table</label><br>
+                                    <label for="removeBold" title="Removes bold for headings in rows"><input id="removeBold" type="checkbox" checked>Remove bold in rows</label><br>
+                                    <label for="trim" title="Removes non-breaking spaces and double spaces in table body's headers"><input id="trim" type="checkbox" checked>Trim spaces</label><br>
+                                    <label for="moveToTfoot" title="Moves the last row of the table to the table footer"><input id="moveToTfoot" type="checkbox">Move last row to footer</label><br>
+                                    <label for="tfoot" title="Add an empty table footer to the table"><input id="tfoot" type="checkbox">Add empty footer</label><br>
+                                    <label for="frNumbers" title="Style numbers into French format"><input id="frNumbers" type="checkbox">French number format</label>
+                            </div>
+                            <div class="text-right mrgn-rght-sm">
+                                <button type="button" class="btn btn-lg btn-primary" id="cleanupBtn" title="Cleans the table markup">Clean up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="wb-inv" id="results">
+                <legend>Results</legend>
+                <div>
+                    <label id='outputLabel'>HTML Results: <input type="button" class="btn btn-default btn-sm" id="copyBtn" value="Copy"> <span id="copiedLabel" class='wb-inv label label-success'>Copied</span></label>
+                    <pre readonly class="form-control mrgn-bttm-sm" style="width: 100%; max-height: 500px;" rows="16" name ='outputTextarea' id='outputText'></pre>
+                    <textarea class='wb-inv' id='copyArea'></textarea>
+                </div>
+
+                <div class="mrgn-tp-lg">
+                    <label>Visual: <input type="button" class="btn btn-default btn-sm" id="copyBtn2" value="Copy"></label>
+                    <p>Select one or more table cells and modify them using the buttons below<br>
+                    <em><small>Note: CSS 'hover' and 'selected' styles will not be included in the HTML code</small></em></p>
+                    
+                    <div class="container wb-bar-b brdr-tp wb-inv" id='tableToolbar'>
+                        <div class="container-fluid mrgn-tp-sm mrgn-bttm-sm">
+                            <button type="button" class="btn btn-info btn-sm mrgn-rght-lg" id="deselectBtn" title="Deselects all table cells">Deselect all</button>
+                            
+                            <button type="button" class="btn btn-info btn-sm" id="theadBtn" title="Toggles the row as a table header row or table body row">Toggle header row</button>
+                            <button type="button" class="btn btn-info btn-sm mrgn-rght-lg" id="tfootBtn" title="Moves the row to table footer">Move row to foot</button>
+
+                            <button type="button" class="btn btn-info btn-sm" id="activeBtn" title="Toggles the row to have the 'active' class (Grey background)">Toggle active</button>
+                            <button type="button" class="btn btn-info btn-sm" id="mergeRowBtn" title="Merges all cell of row into one">Merge row</button>
+                            <button type="button" class="btn btn-info btn-sm mrgn-rght-lg" id="mergeBtn" title="Adds colspan to first cell of its row and deletes other selected cells">Merge cells</button>
+                            
+                            <button type="button" class="btn btn-info btn-sm" id="outdentBtn" title="Decreases the indentation of the cell">Decrease indent</button>
+                            <button type="button" class="btn btn-info btn-sm" id="indentBtn" title="Increases the indentation of the cell">Increase indent</button>
+                            <button type="button" class="btn btn-info btn-sm mrgn-rght-lg" id="boldBtn" title="Toggles each cells' bold style">Toggle bold</button>
+
+                            <button type="button" class="btn btn-info btn-sm" id="leftAlignBtn" title="Set left align style">Set left align</button>
+                            <button type="button" class="btn btn-info btn-sm" id="centerAlignBtn" title="Set center align style">Set center align</button>
+                            <button type="button" class="btn btn-info btn-sm mrgn-rght-lg" id="rightAlignBtn" title="Sets right align style">Set right align</button>
+
+                            <button type="button" class="btn btn-danger btn-sm" id="deleteRowBtn" title="Deletes the row">Delete row</button>
+                        </div>
+                    </div>
+
+                    <div class='mrgn-tp-md mrgn-bttm-lg container-fluid selectable' id="visual" style="background-color: white">&nbsp;</div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <script src='libs/ds.min.js'></script>
+</body>
+</html>
