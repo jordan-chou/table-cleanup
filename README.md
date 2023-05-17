@@ -1,7 +1,7 @@
 # Table Cleanup
 HTML Table editor that provides scoping and a visual editor so that the table meets [Canada.ca web standards](https://www.canada.ca/en/government/about/design-system.html) and the latest [Web Experience Toolkit (WET)](https://wet-boew.github.io/wet-boew/index-en.html) Style guidelines.
 
-This project is updated twice a year when performing critical analysis review for the Department of Finance major reports: Federal Budget, and Economic and Fiscal Update (EFU) or Fall Economic Statement (FES).
+This project is regularly updated twice a year when performing critical analysis review for the Department of Finance major reports: Federal Budget, and Economic and Fiscal Update (EFU) or Fall Economic Statement (FES).
 
 ## Features
 * Interactive editor
