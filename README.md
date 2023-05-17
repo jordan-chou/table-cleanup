@@ -13,10 +13,10 @@ HTML Table editor that provides scoping and a visual editor so that the table me
 * Scoping
 
 ## Instructions
-* Open `table-cleanup.html`
-* Once you copy the `<table>` code from your HTML source, paste it and overwrite the contents in the HTML Input box
-* Press the Clean up button
-* Click on cells within the Visual table to show the toolbar
+1. Open `table-cleanup.html`
+2. Once you copy the `<table>` code from your HTML source, paste it and overwrite the contents in the HTML Input box
+3. Press the Clean up button
+4. Click on cells within the **Visual** table to show the toolbar
 
 ## Options
 **Scope Table**: Adds scope attributes for row and column headings. On by default.
