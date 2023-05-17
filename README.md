@@ -33,7 +33,7 @@ HTML Table editor that provides scoping and a visual editor so that the table me
 
 **French number format**: _Experimental option_. Style numbers into French format, mainly for thousands and decimal separators. Replaces all whitespace thousands separators with non-breaking space and all dot decimal separators with a comma.
 
-## Known Issues
+## Known issues
 ### Drag selection (Added March 2023)
 * Drag selection in the Visual table may not work when selecting a merged cell (cell with colspan > 1)
 * Releasing the mouse outside the Visual table will not complete the drag selection. You **must** release within the Visual table
@@ -45,7 +45,7 @@ HTML Table editor that provides scoping and a visual editor so that the table me
 This tool was initally created for the Department of Finance to automate the scoping process for increased accessibility. Additionally, complex HTML tables were very time-consuming to code, so the tool was later expanded so that tables can be modified within the webpage. This project has **greatly** decreased coding time for any report or publishing task. Prominent tool used for publishing the Canadian Federal Budget.
   
 ### When was it created?
-This project started in 2019 during my co-op term with Department of Finance. I am the sole developer on this project and I have been upgrading, expanding, and maintaining it since then.
+This project started in 2021 during my co-op term with Department of Finance. I am the sole developer on this project and I have been upgrading, expanding, and maintaining it since then.
   
 ### What was my experience at the time?
 I had a little bit of JavaScript and HTML experience at the time. In retrospect, I think I did a good job with the tool in terms of code design but it definitely can and should be refactored. However, in its current state, functional programming help divide the individual features.
