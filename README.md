@@ -1,5 +1,5 @@
 # Table Cleanup
-HTML Table editor that provides scoping and a visual editor so that the table meets Canada.ca web standards and WET Style guidelines.
+HTML Table editor that provides scoping and a visual editor so that the table meets [Canada.ca web standards](https://www.canada.ca/en/government/about/design-system.html) and the latest [Web Experience Toolkit (WET)](https://wet-boew.github.io/wet-boew/index-en.html) Style guidelines.
 
 ## Features
 * Interactive editor
