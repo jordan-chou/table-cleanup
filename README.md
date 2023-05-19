@@ -1,6 +1,8 @@
 # Table Cleanup
 HTML Table editor that provides scoping and a visual editor so that the table meets [Canada.ca web standards](https://www.canada.ca/en/government/about/design-system.html) and the latest [Web Experience Toolkit (WET)](https://wet-boew.github.io/wet-boew/index-en.html) Style guidelines.
 
+**This tool is actively used to code tables in the [Federal Budget](https://www.canada.ca/en/department-finance/services/publications/federal-budget.html) and other Finance Canada publications.**
+
 The table output complies with TBS guidance found here: https://wet-boew.github.io/wet-boew-styleguide/design/tables-en.html
 
 This project is regularly updated twice a year when performing critical analysis review for the Department of Finance's major reports: Federal Budget, and Economic and Fiscal Update (EFU) or Fall Economic Statement (FES).
