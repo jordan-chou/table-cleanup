@@ -870,7 +870,7 @@ window.onload = function () {
         // remove all selected except for first
         for (var i = 1; i < selected.length; i++) {
             if (selected[i].hasAttribute('colspan')) {
-                count += selected[i].getAttribute('colspan');
+                count += +selected[i].getAttribute('colspan');
             } else {
                 count += 1;
             }

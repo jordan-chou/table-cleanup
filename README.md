@@ -19,7 +19,7 @@ This project is regularly updated twice a year when performing critical analysis
 * Scoping
 
 ## Instructions
-1. Open `table-cleanup.html`
+1. Open `index.html`
 2. Once you copy the `<table>` code from your HTML source, paste it and overwrite the contents in the HTML Input box
 3. Press the Clean up button
 4. Click on cells within the **Visual** table to show the toolbar
