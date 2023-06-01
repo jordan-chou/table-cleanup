@@ -55,3 +55,6 @@ This project started in 2021 during my co-op term with Department of Finance. I 
   
 ### What was my experience at the time?
 I had a little bit of JavaScript and HTML experience at the time. In retrospect, I think I did a good job with the tool in terms of code design but it definitely can and should be refactored. However, in its current state, functional programming help divide the individual features.
+
+### Contact
+Please feel free to reach out to me for feedback, issues, or requests at jordan.chou@fin.gc.ca.
