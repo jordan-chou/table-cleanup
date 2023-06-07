@@ -27,7 +27,7 @@ This project is regularly updated twice a year when performing critical analysis
 3. Press the Clean up button
 4. Click on cells within the **Visual** table to show the toolbar
 
-## Requests or issues
+## Requests and Issues
 Please feel free to create in Issue [on Github](https://github.com/jordan-chou/table-cleanup/issues) to make a request or flag issues.
 
 ## Options
