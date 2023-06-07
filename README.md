@@ -27,8 +27,8 @@ This project is regularly updated twice a year when performing critical analysis
 3. Press the Clean up button
 4. Click on cells within the **Visual** table to show the toolbar
 
-## Feedback or issues
-Please feel free to create in Issue [on Github](https://github.com/jordan-chou/table-cleanup/issues) to provide feedback or flag issues.
+## Requests or issues
+Please feel free to create in Issue [on Github](https://github.com/jordan-chou/table-cleanup/issues) to make a request or flag issues.
 
 ## Options
 **Scope Table**: Adds scope attributes for row and column headings. On by default.
