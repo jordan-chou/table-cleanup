@@ -7,6 +7,9 @@ The table output complies with TBS guidance found here: https://wet-boew.github.
 
 This project is regularly updated twice a year when performing critical analysis review for the Department of Finance's major reports: Federal Budget, and Economic and Fiscal Update (EFU) or Fall Economic Statement (FES).
 
+## Upcoming
+* Complex (ID and headers) scoping helper
+
 ## Features
 * Interactive editor
 * Horizontal alignment
@@ -16,7 +19,7 @@ This project is regularly updated twice a year when performing critical analysis
 * Toggle header row
 * Create table footer
 * Drag selection
-* Scoping
+* Simple Scoping
 
 ## Instructions
 1. Open `index.html`
