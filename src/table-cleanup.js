@@ -1485,7 +1485,7 @@ window.onload = function () {
     /*** DEFAULT VALUES START ***/
     const inputText = document.getElementById('inputText');
     // inputText.value = inputDefault.trim();
-    inputText.value = inputDefault.trim();
+//     inputText.value = inputDefault.trim();
 
     const attrText = document.getElementById('attrList');
     attrText.value = attributesDefault.trim();
