@@ -370,6 +370,10 @@ window.onload = function () {
             scrollSmoothTo(visual);
         });
 
+        const tableNumInput = document.getElementById('tableNum');
+
+        tableNumInput.addEventListener('change', updateTableID);
+
         // link 'click' event listers to function
         deselectBtn.addEventListener('click', deselectCells);
         theadBtn.addEventListener('click', toggleThead);
@@ -397,6 +401,31 @@ window.onload = function () {
                 deselectCells();
             }
         });
+    }
+
+    /**
+     * 
+     */
+    function updateTableID() {
+        const tableNumInput = document.getElementById('tableNum');
+        const tableID = document.getElementById('tableID');
+
+        // create unique ID, based on table num if exists
+        let uniqueID = '';
+        if (tableNumInput.value) {
+            let parts = tableNumInput.value.split(' ');
+            for (var s of parts) {
+                console.log(s);
+                if (s.match(/^\D/)) {
+                    uniqueID += s.charAt(0).toLowerCase();
+                }
+                else if (s.match(/[^A-Za-z]/)) {
+                    uniqueID += s.replaceAll('.', '-');
+                }
+            }
+        }
+
+        tableID.value = uniqueID;
     }
 
     /**
@@ -1020,14 +1049,15 @@ window.onload = function () {
      */
     function formatTable(table) {
         // console.log(table);
-        const tableNumInput = document.getElementById('tableNum');
 
         const finTableChecked = document.getElementById('finTable').checked;
         const removeBoldChecked = document.getElementById('removeBold').checked;
         // const scopeChecked = document.getElementById('scope').checked;
         const tfootChecked = document.getElementById('tfoot').checked;
+        const tableID = document.getElementById('tableID');
         
         let newlineTab  = document.createTextNode('\n    ');
+        table.id = tableID.value;
 
         // create 'table-responsive' div
         let tableDiv = document.createElement('div');
@@ -1094,23 +1124,6 @@ window.onload = function () {
         if (tfootChecked) {
             addTfoot(table, true);
         }
-
-        // create unique ID, based on table num if exists
-        let uniqueID = 't00';
-        if (tableNumInput.value) {
-            uniqueID = '';
-            let parts = tableNumInput.value.split(' ');
-            for (var s of parts) {
-                // console.log(s.charAt(0).replaceAll(/[^A-Za-z]/g, '').toLowerCase());
-                // console.log(s.replaceAll(/\D/g, ''));
-                uniqueID += `${s.charAt(0).replaceAll(/[^A-Za-z]/g, '').toLowerCase()}${s.replaceAll(/\D/g, '')}`; 
-            }
-        }
-        /*Disable Footnote functionality - Justin's fault*/
-        //let tableCells = tableDiv.querySelectorAll('thead th, thead td, tbody th, tbody td');
-        // for (var cell of tableCells) {
-        //     generateFootnote(cell, table, uniqueID);
-        // }
 
         return tableDiv;
     }
@@ -1300,102 +1313,6 @@ window.onload = function () {
         }
     }
 
-    function generateFootnote(e, t, uniqueID) {
-        let newlineTab  = document.createTextNode('\n        ');
-        let sup = e.querySelector('sup');
-
-        // if element has a superscript
-        if (sup) {
-            // create footnote if not exist
-            let tfoot = t.querySelector('tfoot');
-
-            // create footnote elements
-            if (!tfoot) {
-                tfoot = addTfoot(t, true);
-            }
-
-            let aside = tfoot.querySelector('aside');
-            let dl = tfoot.querySelector('dl');
-
-            if (!aside) {
-                aside = document.createElement('aside');
-                dl = document.createElement('dl');
-                
-                // set attributes
-                aside.classList.add('wb-fnote');
-                aside.setAttribute('role','note');
-                aside.appendChild(newlineTab.cloneNode());
-                aside.appendChild(dl);
-            }
-
-            // create elements
-            let supA = document.createElement('a');
-            let dt = document.createElement('dt');
-            let dd = document.createElement('dd');
-            let p = document.createElement('p');
-            let fnTextP = document.createElement('p');
-            let fnText = document.createTextNode('Insert footnote text here');
-            let a = document.createElement('a');
-            let fnNum = sup.innerText;
-            let fnNumText = document.createTextNode(fnNum);
-
-            // create special sup tag
-            sup.innerHTML = '';
-            sup.id = `${uniqueID}-${fnNum}-rf`;
-            supA.classList.add('fn-lnk');
-            supA.href = `#${uniqueID}-${fnNum}`;
-
-            supA.appendChild(fnNumText);
-            sup.appendChild(supA);
-
-            if (!aside.querySelector(`#${uniqueID}-${fnNum}`)){
-                // tfoot footnotes
-                dt.id = `${uniqueID}-${fnNum}-dt`;
-                dd.id = `${uniqueID}-${fnNum}`;
-                dd.setAttribute('tabindex', '-1');
-                p.classList.add("fn-rtn");
-                a.href = `#${uniqueID}-${fnNum}-rf`;
-
-                a.appendChild(document.createTextNode(`${fnNum}`));
-                p.appendChild(a);
-                fnTextP.appendChild(fnText);
-                dd.appendChild(fnTextP);
-                dd.appendChild(p);
-                dd.appendChild(newlineTab);
-
-                let dts = dl.querySelectorAll('dt');
-                // console.log(dts)
-                for (var node of dts) {
-                    var dtFnNum;
-                    if (node && node.id) {
-                        dtFnNum = parseInt(node.id.match(/[0-9]+/g)[1]);
-                    }
-                    if (node && node.id && fnNum < dtFnNum) {
-                        dl.insertBefore(newlineTab.cloneNode(), node);
-                        dl.insertBefore(dt, node);
-                        dl.insertBefore(newlineTab.cloneNode(), node);
-                        dl.insertBefore(dd, node);
-                        break;
-                    }
-                    else {
-                        dl.appendChild(newlineTab.cloneNode());
-                        dl.appendChild(dt);
-                        dl.appendChild(newlineTab.cloneNode());
-                        dl.appendChild(dd);
-                    }
-                }
-
-                if (dl.querySelectorAll('dt').length <= 0) {
-                    dl.appendChild(newlineTab.cloneNode());
-                    dl.appendChild(dt);
-                    dl.appendChild(newlineTab.cloneNode());
-                    dl.appendChild(dd);
-                }
-                tfoot.querySelector('tr').querySelector('td').appendChild(aside);
-            }
-        }   
-    }
-
     /**
      * Gets an array of attributes from 'Clean Attributes' list, space-separated
      * @returns Array of attribute strings
@@ -1484,9 +1401,8 @@ window.onload = function () {
     }
 
     /*** DEFAULT VALUES START ***/
-    const inputText = document.getElementById('inputText');
+    // const inputText = document.getElementById('inputText');
     // inputText.value = inputDefault.trim();
-//     inputText.value = inputDefault.trim();
 
     const attrText = document.getElementById('attrList');
     attrText.value = attributesDefault.trim();
