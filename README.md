@@ -25,7 +25,7 @@ This project is regularly updated twice a year when performing critical analysis
 1. Open `index.html`
 2. Once you copy the `<table>` code from your HTML source, paste it and overwrite the contents in the HTML Input box
 3. Press the Clean up button
-4. Click on cells within the **Visual** table to show the toolbar
+4. Click on cells within the table of the **Designer** to show the toolbar
 
 ## Requests and Issues
 Please feel free to create in Issue [on Github](https://github.com/jordan-chou/table-cleanup/issues) to make a request or flag issues.
@@ -47,8 +47,8 @@ Please feel free to create in Issue [on Github](https://github.com/jordan-chou/t
 
 ## Known issues
 ### Drag selection (Added March 2023)
-* Drag selection in the Visual table may not work when selecting a merged cell (cell with colspan > 1)
-* Releasing the mouse outside the Visual table will not complete the drag selection. You **must** release within the Visual table
+* Drag selection in the Designer may not work when selecting a merged cell (cell with colspan > 1)
+* Releasing the mouse outside the Designer will not complete the drag selection. You **must** release within the table
 * Cannot deselect cells. You must click on a single cell to deselect it or press the Deselect all button in the toolbar
 
 ## About

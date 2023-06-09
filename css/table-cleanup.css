@@ -35,3 +35,7 @@ textarea:not(#caption) {
     width: 40%;
     font-size: 0.9em;
 }
+
+td {
+    border: 3px solid #303030;
+}

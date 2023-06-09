@@ -13,18 +13,12 @@
     <link rel="stylesheet" href="css/theme.min.css">
     <link rel="stylesheet" href="css/table-cleanup.css">
 
-    <style>
-        td {
-            border: 3px solid #303030;
-        }
-    </style>
-
     <script src='libs/jquery-3.6.0.slim.min.js'></script>
     <script type='text/javascript' src='src/table-cleanup.js'></script>
 </head>
 <body>
     <div class="container">
-        <h1>Table Cleanup <span class="small">v2023.05.11</span></h1>
+        <h1>Table Cleanup <span class="small">v2023.06.09</span></h1>
         <div class="well">
             <fieldset>
                 <legend>Table Caption</legend>
@@ -52,7 +46,7 @@
                 <div class="row">
                     <div class="col-md-12 mrgn-bttm-md">
                         <label for='inputTextarea'>Add table markup below including the <code>&lt;table&gt;&lt;/table&gt;</code> element</label>
-                        <textarea class="form-control mrgn-bttm-sm" style="width: 100%;" rows="16" name ='inputTextarea' id='inputText' title="Paste the table HTML markup"></textarea>
+                        <textarea class="form-control mrgn-bttm-sm" style="width: 100%;" rows="16" name ='inputTextarea' id='inputText' placeholder="Paste in the HTML code" title="Paste the table HTML markup"></textarea>
                     </div>
                 </div>
             </fieldset>
@@ -74,7 +68,7 @@
                                 <span class="mrgn-rght-md wb-inv">
                                     <label for="format"><input id="format" type="checkbox" checked disabled>Format table</label>
                                 </span>
-                                    <label for="scope" title="Adds scope attributes to headings"><input id="scope" type="checkbox" checked>Scope table</label><br>
+                                    <!-- <label for="scope" title="Adds scope attributes to headings"><input id="scope" type="checkbox" checked>Scope table</label><br> -->
                                     <label for="finTable" title="Aligns all cells to the right except for row headings"><input id="finTable" type="checkbox" checked>Financial table</label><br>
                                     <label for="removeBold" title="Removes bold for headings in rows"><input id="removeBold" type="checkbox" checked>Remove bold in rows</label><br>
                                     <label for="trim" title="Removes non-breaking spaces and double spaces in table body's headers"><input id="trim" type="checkbox" checked>Trim spaces</label><br>
@@ -98,7 +92,7 @@
                 </div>
 
                 <div class="mrgn-tp-lg">
-                    <label>Visual: <input type="button" class="btn btn-default btn-sm" id="copyBtn2" value="Copy"></label>
+                    <label>Designer: <input type="button" class="btn btn-default btn-sm" id="copyBtn2" value="Copy"></label>
                     <p>Select one or more table cells and modify them using the buttons below<br>
                     <em><small>Note: CSS 'hover' and 'selected' styles will not be included in the HTML code</small></em></p>
                     
@@ -131,6 +125,5 @@
         </div>
     </div>
 
-    <script src='libs/ds.min.js'></script>
 </body>
 </html>

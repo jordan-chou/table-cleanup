@@ -452,7 +452,7 @@ window.onload = function () {
      */
     function moveTRToThead(moveTRs, thead) {
         const finTableChecked = document.getElementById('finTable').checked;
-        const scopeChecked = document.getElementById('scope').checked;
+        // const scopeChecked = document.getElementById('scope').checked;
 
         for (var moveTR of moveTRs) {
             if (moveTR.querySelector('.selected')) {
@@ -462,14 +462,15 @@ window.onload = function () {
                 var count = 0;
 
                 moveTR.querySelectorAll('th, td').forEach((node) => {
+                    // add 'text-right' class to <th> if financial table
                     if (finTableChecked && count > 0 && node.nodeName === 'TD') {
                         node.classList.add('text-right');
                     }
                     var newNode = renameTag(node, 'th');
-                    // add 'text-right' class to <th> if financial table
-                    if (scopeChecked) {
-                        newNode.setAttribute('scope', 'col');
-                    }
+
+                    // if (scopeChecked) {
+                    //     newNode.setAttribute('scope', 'col');
+                    // }
 
                     count++;
                 });
@@ -485,7 +486,7 @@ window.onload = function () {
      */
       function moveTRToTbody(moveTRs, tbody) {
         const finTableChecked = document.getElementById('finTable').checked;
-        const scopeChecked = document.getElementById('scope').checked;
+        // const scopeChecked = document.getElementById('scope').checked;
 
         for (var moveTR of moveTRs) {
             if (moveTR.querySelector('.selected')) {
@@ -493,12 +494,12 @@ window.onload = function () {
         
                 let ths = moveTR.querySelectorAll('th');
                 for (var i = 0; i < ths.length; i++) {
-                    if (i === 0) {
-                        if (scopeChecked) {
-                            ths[i].setAttribute('scope', 'row');
-                        }
-                        continue;
-                    }
+                    // if (i === 0) {
+                    //     if (scopeChecked) {
+                    //         ths[i].setAttribute('scope', 'row');
+                    //     }
+                    //     continue;
+                    // }
                     var newNode = renameTag(ths[i], 'td');
                     // add 'text-right' class to <td> if financial table
                     if (finTableChecked) {
@@ -809,7 +810,7 @@ window.onload = function () {
      * @param {*} row TR DOM element
      */
     function setAsActive(row) {
-        const scopeChecked = document.getElementById('scope').checked;
+        // const scopeChecked = document.getElementById('scope').checked;
 
         row.classList.toggle('active');
 
@@ -817,13 +818,13 @@ window.onload = function () {
         for (var cell of cells) {
             if (cell.nodeName === 'TH') {
                 cell.classList.toggle('fnt-nrml', !row.classList.contains('active'));
-                if (scopeChecked) {
-                    if (row.classList.contains('active')) {
-                        cell.setAttribute('scope', 'colgroup');
-                    } else {
-                        cell.setAttribute('scope', 'row');
-                    }
-                }
+                // if (scopeChecked) {
+                //     if (row.classList.contains('active')) {
+                //         cell.setAttribute('scope', 'colgroup');
+                //     } else {
+                //         cell.setAttribute('scope', 'row');
+                //     }
+                // }
             }
             else {
                 setBold(cell, row.classList.contains('active'));
@@ -1023,7 +1024,7 @@ window.onload = function () {
 
         const finTableChecked = document.getElementById('finTable').checked;
         const removeBoldChecked = document.getElementById('removeBold').checked;
-        const scopeChecked = document.getElementById('scope').checked;
+        // const scopeChecked = document.getElementById('scope').checked;
         const tfootChecked = document.getElementById('tfoot').checked;
         
         let newlineTab  = document.createTextNode('\n    ');
@@ -1067,22 +1068,22 @@ window.onload = function () {
             if (trFirstChild) {
                 // rename first child to <th> tag
                 var firstChildNode = renameTag(trFirstChild, 'th');
-                if (scopeChecked) {
-                    firstChildNode.setAttribute('scope', 'row');
-                }
+                // if (scopeChecked) {
+                //     firstChildNode.setAttribute('scope', 'row');
+                // }
 
                 // add 'active' class to <tr> if child has 'colspan'
                 if (trFirstChild.hasAttribute('colspan')) {
                     tr.classList.add('active');
-                    if (scopeChecked) {
-                        trFirstChild.setAttribute('scope', 'colgroup');
-                    }
+                    // if (scopeChecked) {
+                    //     trFirstChild.setAttribute('scope', 'colgroup');
+                    // }
                 }
-                if (scopeChecked && trFirstChild.hasAttribute('rowspan')) {
-                    if (scopeChecked) {
-                        trFirstChild.setAttribute('scope', 'rowgroup');
-                    }
-                }  
+                // if (scopeChecked && trFirstChild.hasAttribute('rowspan')) {
+                //     if (scopeChecked) {
+                //         trFirstChild.setAttribute('scope', 'rowgroup');
+                //     }
+                // }  
                 else if (removeBoldChecked) {
                     firstChildNode.classList.add('fnt-nrml');
                 }
