@@ -372,7 +372,7 @@ window.onload = function () {
 
         const tableNumInput = document.getElementById('tableNum');
 
-        tableNumInput.addEventListener('change', updateTableID);
+        tableNumInput.addEventListener('keyup', updateTableID);
 
         // link 'click' event listers to function
         deselectBtn.addEventListener('click', deselectCells);
@@ -415,12 +415,17 @@ window.onload = function () {
         if (tableNumInput.value) {
             let parts = tableNumInput.value.split(' ');
             for (var s of parts) {
-                console.log(s);
                 if (s.match(/^\D/)) {
                     uniqueID += s.charAt(0).toLowerCase();
                 }
                 else if (s.match(/[^A-Za-z]/)) {
-                    uniqueID += s.replaceAll('.', '-');
+                    if (s.includes('.')) {
+                        if (s.endsWith('.')) {
+                            s = s.slice(0, s.length-1);
+                        }
+                        s = s.replaceAll('.', '-');
+                    }
+                    uniqueID += s;
                 }
             }
         }
@@ -1401,8 +1406,8 @@ window.onload = function () {
     }
 
     /*** DEFAULT VALUES START ***/
-    // const inputText = document.getElementById('inputText');
-    // inputText.value = inputDefault.trim();
+    const inputText = document.getElementById('inputText');
+    inputText.value = inputDefault.trim();
 
     const attrText = document.getElementById('attrList');
     attrText.value = attributesDefault.trim();
