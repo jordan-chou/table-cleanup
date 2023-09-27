@@ -1159,13 +1159,17 @@ window.onload = function () {
             caption.appendChild(newlineTab.cloneNode());
         }
         if (tableTitle) {
-            caption.appendChild(linebreak);
+            if (tableNum) {
+                caption.appendChild(linebreak);
+            }
             caption.appendChild(newlineTab.cloneNode());
             caption.appendChild(strong);
             caption.appendChild(newlineTab.cloneNode());
         }
         if (tableUnit) {
-            caption.appendChild(linebreak.cloneNode());
+            if (tableTitle) {
+                caption.appendChild(linebreak.cloneNode());
+            }
             caption.appendChild(newlineTab.cloneNode());
             caption.appendChild(small);
             caption.appendChild(newlineTabSmall);
