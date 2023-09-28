@@ -13,6 +13,7 @@ nowrap
 let tagsDefault =
 `
 p
+colgroup
 `
 
 let inputDefault =
@@ -948,7 +949,7 @@ window.onload = function () {
                     html = formatTable(t); // 'Format table' option
                 }
                 cleanElement(t);
-                t.querySelectorAll('thead *, tbody *').forEach((e) => {
+                t.querySelectorAll('thead *, tbody *, table *').forEach((e) => {
                     cleanElement(e);
                 });
  
